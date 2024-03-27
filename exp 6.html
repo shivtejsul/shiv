@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type= "text/xsl"  href="p1.xsl"?>
+<class>	
+	<student roll="1">
+		<name> shiv</name>
+		<age>19</age>
+		<address>solapur</address>
+		<subject>maths</subject><br>
+	</student>
+	<student roll="2">
+		<name>shivtej</name>
+		<age>23</age>
+		<address>Akuj</address>
+</student>	
+</class>
+
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:template match="/">
+<xsl:for-each select="class">
+ <xsl:apply-templates select="student" />
+ </xsl:for-each>
+ </xsl:template>
+<xsl:template match="student">
+<p>
+ <xsl:value-of select="@roll" />
+ </p>
+<p><b>
+ <xsl:value-of select="name" />
+ </b>
+ </p>
+<p>
+<i>
+ <xsl:value-of select="age" />
+ </i>
+ </p>
+<p>
+<u>
+ <xsl:value-of select="subject" />
+ </u>
+ </p>
+ </xsl:template>
+  </xsl:stylesheet>
